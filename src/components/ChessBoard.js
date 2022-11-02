@@ -2,6 +2,7 @@ import Box from "./Box";
 import styles from "./ChessBoard.module.css";
 import constants from "../utils/constants";
 import Coordinates from "./Coordinates";
+import BoxesList from "./BoxesList";
 
 const getChessBoardBoxes = () => {
   const letterCoordinates = ["a", "b", "c", "d", "e", "f", "g", "h"];
@@ -32,18 +33,14 @@ const getChessBoardBoxes = () => {
 
   return boxes;
 };
-const ChessBoard = (props) => {
+const ChessBoard = () => {
   const boxes = getChessBoardBoxes();
 
   return (
     <div className={styles.container}>
       <Coordinates numbers={true} />
       <div className={styles["chess-board"]}>
-        {boxes.map((row, index) => (
-          <div className={styles.row} key={index}>
-            {row.map((box) => box)}
-          </div>
-        ))}
+        <BoxesList boxes={boxes}/>
         <Coordinates />
       </div>
     </div>
