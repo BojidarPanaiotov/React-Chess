@@ -1,0 +1,17 @@
+.letters {
+  font-size: 1.3em;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 0.6em;
+}
+
+.numbers {
+  font-size: 1.3em;
+  color: white;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-around;
+  height: 640px;
+  padding-right: 0.8em;
+}
