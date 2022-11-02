@@ -1,31 +1,29 @@
 import Box from "./Box";
 import styles from "./ChessBoard.module.css";
+import constants from "../utils/constants";
 
 const getChessBoardBoxes = () => {
   const boxes = [];
-  let counter = 1;
   let color;
   for (let row = 0; row < 8; row++) {
     boxes.push([]);
     for (let col = 0; col < 8; col++) {
-      if (counter % 2 === 0) {
-        color = "#FFF";
-      } else {
-        color = "#51A3A3";
-      }
+      color =
+        (row + col) % 2 === 0
+          ? constants.WHITE_BOX_COLOR
+          : constants.BLACK_BOX_COLOR;
+
       boxes[row].push(
         <Box
           backgroundColor={color}
           id={{ x: row, y: col }}
           key={row + " " + col}></Box>
       );
-      counter++;
     }
-    counter++;
   }
 
   return boxes;
-}
+};
 const ChessBoard = (props) => {
   const boxes = getChessBoardBoxes();
 
