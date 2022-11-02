@@ -5,6 +5,9 @@ import constants from "../utils/constants";
 const getChessBoardBoxes = () => {
   const boxes = [];
   let color;
+  const onBoxClickHandler = (e) => {
+    console.log(e.target.id);
+  }
   for (let row = 0; row < 8; row++) {
     boxes.push([]);
     for (let col = 0; col < 8; col++) {
@@ -17,7 +20,8 @@ const getChessBoardBoxes = () => {
         <Box
           backgroundColor={color}
           id={{ x: row, y: col }}
-          key={row + " " + col}></Box>
+          key={row + " " + col}
+          onClickHandler={onBoxClickHandler}></Box>
       );
     }
   }
