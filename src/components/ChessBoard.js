@@ -11,7 +11,9 @@ const getChessBoardBoxes = (figuresCtx) => {
   const boxes = [];
   let color;
   const onBoxClickHandler = (e) => {
-    console.log(e.target.id);
+    if(figuresCtx.turn === 'white') {
+      console.log(e.target.id);
+    }
   };
   for (let row = 0; row < 8; row++) {
     boxes.push([]);
